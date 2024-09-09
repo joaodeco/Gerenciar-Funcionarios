@@ -1,8 +1,11 @@
-funcionarios = [
+let funcionarios = [
     {
-    "nome": "João Silva",
-    "cargo": "Desenvolvedor",
-    "departamento": "TI",
-    "salario": 5000
+    id: 1,
+    nome: "Murilo",
+    cargo: "Programador",
+    departamento: "Flutter Flow",
+    salario: 500000
     }
 ]
+
+module.exports = {funcionarios}

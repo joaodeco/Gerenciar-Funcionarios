@@ -3,21 +3,24 @@ const app = express()
 const porta = 3000
 app.use(express.json());
 
+const routerFuncionarios = require('./routerFuncionarios')
+
+app.use('/funcionarios', routerFuncionarios)
 
 const criarFuncionario = require ('./criar')
-app.post('/criar', criarFuncionario)
+app.post('/', criarFuncionario)
 
 const listarFuncionarios = require ('./listar')
-app.get('/listar', listarFuncionarios)
+app.get('/', listarFuncionarios)
 
 const deletarFuncionario = require ('./deletar')
-app.delete('/deletar/:id', deletarFuncionario)
+app.delete('/:id', deletarFuncionario)
 
 const atualizarFuncionario = require ('./atualizar')
-app.put('/atualizar/:id', atualizarFuncionario)
+app.put('/:id', atualizarFuncionario)
 
 const buscarPorSalario = require ('./buscarPorSalario')
-app.get('./buscarPorSalario', buscarPorSalario)
+app.get('./', buscarPorSalario)
 
 app.use ((req, res) => {
     res.status(404).send('Pagina não encontrada ! ')
